@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.submit-btn {
+  background: rgb(205, 75, 0);
+  padding: 1rem;
+  border-radius: 10px;
+  width: 100%;
+  font-weight: 600;
+}
