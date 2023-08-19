@@ -4,7 +4,7 @@ const validateSchema = (schema) => (req, res, next) => {
     next();
   } catch (error) {
     console.error(error.errors);
-    res.status(404).json({ error: error.errors.map((error) => error.message) });
+    res.status(404).json(error.errors.map((error) => error.message));
   }
 };
 
