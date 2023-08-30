@@ -5,16 +5,13 @@ export const authRequired = (req, res, next) => {
   const { token } = req.cookies;
 
   if (!token)
-    return res.status(404).json({ error: "Invalid token provided in request" });
+    return res.status(401).json({ message: "No token, authorization denied" });
 
   jwt.verify(token, TOKEN_SCRET, (err, user) => {
-    if (err)
-      return res
-        .status(404)
-        .json({ error: "Invalid token provided in request jwt" });
+    if (err) return res.status(403).json({ message: "Invalid token" });
 
     req.user = user;
+    
+    next();
   });
-
-  next();
 };
