@@ -14,18 +14,18 @@ const TaskCard = ({ task }) => {
         <h1 className="h4">{task.title}</h1>
         <div className="flex gap-x-1 items-center px-2">
           <button
-            className="bg-indigo-500 px-1 py-1"
+            className="bg-indigo-500 px-1 py-1 rounded-md"
             onClick={() => deleteTask(task._id)}
           >
             delete
           </button>
-          <Link to={`/tasks/${task._id}`} className="bg-indigo-500 px-1 py-1">
+          <Link to={`/tasks/${task._id}`} className="bg-indigo-500 px-1 py-1 rounded-md">
             edit
           </Link>
         </div>
       </header>
-      <span>{task.description}</span>
-      <span>{format(new Date(task.date), "es")}</span>
+      <p>{task.description}</p>
+      <p>{format(new Date(task.date), "es")}</p>
       {/* Utiliza el locale en español */}
     </div>
   );
