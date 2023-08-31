@@ -1,1 +1,1 @@
-export const TOKEN_SCRET = "@secret_token983";
+export const TOKEN_SECRET = "@secret_token983";
