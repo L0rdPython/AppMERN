@@ -11,10 +11,7 @@ const app = express();
 app.use(cookieParser());
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://anotador-backendgghh.onrender.com",
-    ],
+    origin: ["http://localhost:5173", "https://list-front.vercel.app"],
     credentials: true,
   })
 );
