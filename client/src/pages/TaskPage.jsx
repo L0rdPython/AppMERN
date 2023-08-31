@@ -15,7 +15,7 @@ const TaskPage = () => {
   }
 
   return (
-    <div className="grid grid-cols-1 gap-2 px-2 py-2">
+    <div className="grid grid-cols-1 sm:w-full md:grid-cols-2 lg:grid-cols-3 gap-2 px-2 py-2">
       {tasks.map((task, index) => (
         <TaskCard task={task} key={index} />
       ))}

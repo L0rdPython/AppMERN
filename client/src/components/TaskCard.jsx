@@ -19,7 +19,10 @@ const TaskCard = ({ task }) => {
           >
             delete
           </button>
-          <Link to={`/tasks/${task._id}`} className="bg-indigo-500 px-1 py-1 rounded-md">
+          <Link
+            to={`/tasks/${task._id}`}
+            className="bg-indigo-500 px-1 py-1 rounded-md"
+          >
             edit
           </Link>
         </div>
