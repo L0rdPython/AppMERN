@@ -1,8 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
+import "bootstrap/dist/css/bootstrap.min.css";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect } from "react";
 
 const LoginPage = () => {
@@ -26,7 +26,7 @@ const LoginPage = () => {
   }, [isAuthenticated]);
 
   return (
-    <div className="container d-flex justify-content-center align-items-center vh-100">
+    <div className="flex justify-around py-5 px-2 ">
       <div className="card p-4">
         <h1 className="h3 text-center mb-3">Sign in to your account</h1>
 
@@ -56,7 +56,7 @@ const LoginPage = () => {
             <label htmlFor="password" className="form-label">
               Password
             </label>
-            <div className="d-flex justify-content-between align-items-center">
+            <div className="d-flex justify-content-between align-items-center gap-x-3">
               <input
                 {...register("password", { required: true })}
                 type="password"

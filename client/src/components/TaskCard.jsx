@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
 import { format, register } from "timeago.js";
 import es from "timeago.js/lib/lang/es"; // Importa el archivo de locales en español
 import { useTasks } from "../context/TaskContext";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 register("es", es); // Registra el locale en español
 
@@ -14,14 +14,14 @@ const TaskCard = ({ task }) => {
         <h1 className="h4">{task.title}</h1>
         <div className="flex gap-x-1 items-center px-2">
           <button
-            className="bg-indigo-500 px-1 py-1 rounded-md"
+            className="bg-red-500 px-1 py-1 rounded-md text-white"
             onClick={() => deleteTask(task._id)}
           >
             delete
           </button>
           <Link
             to={`/tasks/${task._id}`}
-            className="bg-indigo-500 px-1 py-1 rounded-md"
+            className="bg-blue-500 px-1 py-1 rounded-md text-white hover:no-underline"
           >
             edit
           </Link>
@@ -32,6 +32,15 @@ const TaskCard = ({ task }) => {
       {/* Utiliza el locale en español */}
     </div>
   );
+};
+
+TaskCard.propTypes = {
+  task: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default TaskCard;

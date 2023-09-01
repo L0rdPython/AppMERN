@@ -23,7 +23,7 @@ const RegisterPage = () => {
   });
 
   return (
-    <div className="container d-flex justify-content-center align-items-center vh-100">
+    <div className="flex justify-around py-5 px-2 ">
       <div className="card p-4">
         <h2 className="h3 text-center mb-4">Create your account</h2>
 
